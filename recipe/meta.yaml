@@ -9,6 +9,10 @@ source:
   url: https://github.com/heitzmann/{{ name }}/archive/v{{ version }}.tar.gz
   folder: gdstk
   sha256: f01a1dbdec4a0cb5f6f61fce699abe14c04f299fe8e049fb746068f90e51afda
+  patches:
+    # Restore the linker flags stdlib=c++ and mmacosx-version-min=10.9 removed
+    # in version 0.9.49
+    - 0001-Undo-recent-linker-flag-changes.patch
 
 build:
   number: 0
